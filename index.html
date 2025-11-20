@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sober Coffee</title>
+    <link rel="icon" href="meo.png" type="image/png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="floating-beans">
+        <img src="bean.png" class="bean b1" alt="">
+        <img src="bean.png" class="bean b2" alt="">
+        <img src="bean.png" class="bean b3" alt="">
+        <img src="bean.png" class="bean b4" alt="">
+        <img src="bean.png" class="bean b5" alt="">
+    </div>
+
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="house-loader">
+                <div class="smoke"></div>
+                <div class="smoke s2"></div>
+                <div class="chimney"></div>
+                <div class="roof"></div>
+                <div class="house-body">
+                    <div class="window"></div>
+                    <div class="door"></div>
+                </div>
+            </div>
+            <p class="mt-3 fw-bold" style="color: #4a2c2a;">Loading...</p>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg py-3 fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-cup-hot-fill me-2" style="color: var(--coffee-accent);"></i>Sober Coffee
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#popular">Our product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#delivery">Delivery</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-3">
+                    <form class="d-flex" role="search">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchInput" style="border-radius: 20px;">
+                    </form>
+                    
+                    <a href="#" id="openCartBtn" class="nav-link fs-5 position-relative">
+                        <i class="bi bi-cart3"></i>
+                        <span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem; display: none;">
+                            0
+                        </span>
+                    </a>
+                    <a href="#" id="btnLogin" class="btn btn-login" onclick="openLoginModal()">Login</a>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero-section" id="home">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Enjoy your <span class="text-accent">coffee</span> before your activity</h1>
+                    <p class="lead my-4">
+                        Boost your productivity and build your mood with a glass of coffee in the morning.
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <a href="#" class="btn btn-primary me-4">
+                            Order now <i class="bi bi-cart-fill ms-2" style="background: rgba(255,255,255,0.2); padding: 5px; border-radius: 50%;"></i>
+                        </a>
+                        <a href="#" class="more-menu-link">More menu</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <div class="hero-image-container">
+                        <img src="img-hero.png" alt="Cappuccino">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular-now-section" id="popular">
+            <div class="container position-relative z-2">
+                <h2 class="section-title mb-5 text-black">Popular <span class="highlight-now">Now</span></h2>
+                
+                <div id="popular-container" class="row g-4 justify-content-center">
+                    </div>
+
+            </div>
+            <div class="popular-bg-shape"></div>
+        </section>
+
+        <section class="py-5 text-center" id="delivery">
+            <h2 class="text-center mb-4">How to use delivery service</h2>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="service-icon mb-3"><i class="bi bi-cup-straw"></i></div>
+                    <h5>Choose your coffee</h5>
+                    <p>There are 20+ coffees for you</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-icon mb-3"><i class="bi bi-truck"></i></div>
+                    <h5>We delivery it to you</h5>
+                    <p>Choose delivery service</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-icon mb-3"><i class="bi bi-cup-hot"></i></div>
+                    <h5>Enjoy your coffee</h5>
+                    <p>Choose delivery service</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-img-container">
+                        <img src="a3.png" alt="About Us" class="about-img">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2>About us</h2>
+                    <p class="my-3">
+                        We provide quality coffee, and ready to deliver.
+                    </p>
+                    <p>
+                        We are a company that makes and distributes delicious drinks. Our main product is made from a coffee base, brewed by first-class baristas.
+                    </p>
+                    <a href="#" class="btn btn-primary">Learn more</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 section-title">Special menu for you</h2>
+                
+                <div id="menu-container" class="row g-4">
+                    </div>
+            </div>
+        </section>
+
+        <section class="py-5 testimonial-section">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-4">
+                        <h2 class="mb-3">What they say about us</h2>
+                        <p class="text-secondary">
+                            We always provide the best service and always maintain the quality of coffee
+                        </p>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="testimonial-item">
+                                    <img src="a10.jpg" class="testimonial-img" alt="Naura">
+                                    <div class="testimonial-caption">
+                                        <h5 class="card-title">Naura</h5>
+                                        <p class="card-text">"I really love the cappuccino, the coffee was very smooth."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="testimonial-item">
+                                    <img src="Jon.jpg" class="testimonial-img" alt="John">
+                                    <div class="testimonial-caption">
+                                        <h5 class="card-title">John</h5>
+                                        <p class="card-text">"this coffee shop is very convenient"</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="testimonial-item">
+                                    <img src="meo.png" class="testimonial-img" alt="Azura">
+                                    <div class="testimonial-caption">
+                                        <h5 class="card-title">Azura</h5>
+                                        <p class="card-text">"the coffee menu here is very much"</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-start mt-3">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="py-5">
+            <div class="subscribe-section">
+                <div class="text-center mb-4">
+                    <h2>Subscribe to get 50% discount price</h2>
+                </div>
+                <form class="d-flex justify-content-center">
+                    <input type="email" class="form-control subscribe-input me-3" placeholder="Email address">
+                    <button type="submit" class="btn btn-primary subscribe-btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer container py-5 mt-4">
+        <div class="row">
+            <div class="col-lg-4 mb-3">
+                <a class="navbar-brand fs-4" href="#">
+                    <i class="bi bi-cup-hot-fill me-2" style="color: var(--coffee-accent);"></i>Sober Coffee
+                </a>
+                <p class="mt-2">We are a company that makes and distributes delicious drinks.</p>
+            </div>
+            <div class="col-lg-2 col-6 mb-3">
+                <h5>About</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Feature</a></li>
+                    <li><a href="#">News</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-6 mb-3">
+                <h5>Company</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Team</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-3">
+                <h5>Follow Us</h5>
+                <a href="#" class="fs-4 me-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="fs-4 me-2"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="fs-4 me-2"><i class="bi bi-twitter-x"></i></a>
+            </div>
+        </div>
+        <hr>
+        <p class="text-center">&copy; 2025 Sober Coffee. All rights reserved.</p>
+    </footer>
+
+    <div id="loginModal" class="search-modal-overlay" style="display: none;">
+        <div class="search-modal-box" style="max-width: 450px;">
+            <button class="btn-close-modal" onclick="closeLoginModal()"><i class="bi bi-x-lg"></i></button>
+            
+            <div id="login-container">
+                <div class="text-center mb-4">
+                    <h3 style="color: var(--coffee-dark); font-weight: 800;">Welcome Back!</h3>
+                </div>
+
+                <form onsubmit="handleLogin(event)">
+                    <div class="mb-3">
+                        <input type="text" id="username" class="form-control login-input" placeholder="Username (admin)" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" id="password" class="form-control login-input" placeholder="Password (123)" required>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rememberMe">
+                            <label class="form-check-label text-muted" style="font-size: 0.9rem;">Remember me</label>
+                        </div>
+                        <a href="#" class="text-decoration-none" style="font-size: 0.9rem; color: var(--coffee-accent);">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 py-2 fs-5" style="border-radius: 25px;">Sign In</button>
+                </form>
+
+                <div class="text-center mt-4">
+                    <p class="text-muted small">Or continue with</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <button class="btn-social google" onclick="socialLogin('Google')"><i class="bi bi-google"></i></button>
+                        <button class="btn-social facebook" onclick="socialLogin('Facebook')"><i class="bi bi-facebook"></i></button>
+                        <button class="btn-social apple" onclick="socialLogin('Apple')"><i class="bi bi-apple"></i></button>
+                    </div>
+                </div>
+
+                <p class="text-center mt-4 text-muted">
+                    Don't have an account? <a href="#" onclick="toggleAuthMode()" style="color: var(--coffee-accent); text-decoration: none; font-weight: bold;">Sign up</a>
+                </p>
+            </div>
+
+            <div id="signup-container" style="display: none;">
+                <div class="text-center mb-4">
+                    <h3 style="color: var(--coffee-dark); font-weight: 800;">Create Account</h3>
+                    <p class="text-muted">Join us and enjoy your coffee!</p>
+                </div>
+
+                <form onsubmit="handleSignup(event)">
+                    <div class="mb-3">
+                        <input type="text" id="reg-username" class="form-control login-input" placeholder="Username" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" id="reg-email" class="form-control login-input" placeholder="Email address" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" id="reg-password" class="form-control login-input" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 py-2 fs-5" style="border-radius: 25px;">Sign Up</button>
+                </form>
+
+                <div class="text-center mt-4">
+                    <p class="text-muted small">Or sign up with</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <button class="btn-social google" onclick="socialLogin('Google')"><i class="bi bi-google"></i></button>
+                        <button class="btn-social facebook" onclick="socialLogin('Facebook')"><i class="bi bi-facebook"></i></button>
+                    </div>
+                </div>
+
+                <p class="text-center mt-4 text-muted">
+                    Already have an account? <a href="#" onclick="toggleAuthMode()" style="color: var(--coffee-accent); text-decoration: none; font-weight: bold;">Sign in</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="searchModal" class="search-modal-overlay" style="display: none;">
+        <div class="search-modal-box">
+            <button class="btn-close-modal" onclick="closeSearchModal()"><i class="bi bi-x-lg"></i></button>
+            
+            <h3 class="text-center mb-4" style="color: var(--coffee-dark);">Kết quả tìm kiếm</h3>
+            
+            <div id="modal-results-container" class="row g-4 justify-content-center">
+                </div>
+        </div>
+    </div>
+
+    <div id="cartModal" class="search-modal-overlay" style="display: none;">
+        <div class="search-modal-box">
+            <button class="btn-close-modal" onclick="closeCartModal()"><i class="bi bi-x-lg"></i></button>
+            
+            <h3 class="text-center mb-4" style="color: var(--coffee-dark);">Giỏ hàng của bạn</h3>
+            
+            <div id="cart-items-container">
+                </div>
+
+            <div class="cart-footer mt-4 pt-3 border-top">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="mb-0">Tổng cộng:</h4>
+                    <h4 id="cart-total-price" style="color: var(--coffee-accent); font-weight: 800;">0 K</h4>
+                </div>
+                <button class="btn btn-primary w-100 py-2 fs-5" onclick="checkout()">Thanh toán ngay</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="script.js"></script>
+    
+    <div id="toast-container"></div>
+    
+</body>
+</html>
